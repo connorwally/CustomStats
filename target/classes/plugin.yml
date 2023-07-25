@@ -1,0 +1,5 @@
+name: ValantisSTATS
+version: '1.0-SNAPSHOT'
+main: org.wally.valantisstats.ValantisSTATS
+api-version: '1.20'
+load: STARTUP

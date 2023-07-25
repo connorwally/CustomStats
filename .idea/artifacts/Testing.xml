@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Testing">
+    <output-path>$PROJECT_DIR$/out/artifacts/Testing</output-path>
+    <root id="archive" name="ValantisSTATS.jar">
+      <element id="module-output" name="ValantisSTATS" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>
