@@ -24,7 +24,7 @@ public class ModifyStats implements CommandExecutor {
         }
 
         // Ensure enough arguments are provided
-        if(args.length < 3){
+        if(args.length < 3 && (args.length == 2 && !args[0].equals("remove"))){
             ValantisSTATS.getPlugin().getLogger().info("Not enough arguments provided");
             return false;
         }
@@ -33,21 +33,24 @@ public class ModifyStats implements CommandExecutor {
         Player player = (Player) sender;
 
         // Ensure that a valid command has been sent
-        if(!(args[0].equals("add") || args[0].equals("set"))){
+        if(!(args[0].equals("add") || args[0].equals("set") || args[0].equals("remove"))){
             ValantisSTATS.getPlugin().getLogger().info("You need to use \"add\"");
             return false;
         }
 
         PersistentDataContainer c = player.getPersistentDataContainer();
 
+        int amount = 0;
+
         // Ensure that the entered amount can be converted to an integer.
-        int amount;
-        try{
-            amount = Integer.parseInt(args[2]);
-        }
-        catch(NumberFormatException e){
-            ValantisSTATS.getPlugin().getLogger().info("The amount must be an integer");
-            return false;
+        if(!args[0].equals("remove")){
+            try{
+                amount = Integer.parseInt(args[2]);
+            }
+            catch(NumberFormatException e){
+                ValantisSTATS.getPlugin().getLogger().info("The amount must be an integer");
+                return false;
+            }
         }
 
         // Perform the add stats on the player
@@ -56,6 +59,9 @@ public class ModifyStats implements CommandExecutor {
 
         if(args[0].equals("set"))
             SetStats(args[1], amount, c);
+
+        if(args[0].equals("remove"))
+            RemoveStats(args[1], c);
 
         return true;
     }
@@ -79,5 +85,10 @@ public class ModifyStats implements CommandExecutor {
     }
 
     void SetStats(String key, int added, PersistentDataContainer container){
+        container.set(new NamespacedKey(ValantisSTATS.getPlugin(), key), PersistentDataType.INTEGER, added);
+    }
+
+    void RemoveStats(String key, PersistentDataContainer container){
+        container.remove(new NamespacedKey(ValantisSTATS.getPlugin(), key));
     }
 }
