@@ -12,8 +12,8 @@
     <list default="true" id="789a3f53-297e-4d53-9571-8a1cc3799cdf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Testing/ValantisSTATS.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing/ValantisSTATS.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/wally/valantisstats/Commands/ModifyStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/wally/valantisstats/Commands/ModifyStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/wally/valantisstats/Listeners/AdditionalDrops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/wally/valantisstats/Listeners/AdditionalDrops.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/wally/valantisstats/Listeners/AdditionalDrops.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/wally/valantisstats/Listeners/AdditionalDrops.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

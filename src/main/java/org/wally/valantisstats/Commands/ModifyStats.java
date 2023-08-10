@@ -55,13 +55,13 @@ public class ModifyStats implements CommandExecutor {
 
         // Perform the add stats on the player
         if(args[0].equals("add"))
-            AddStats(args[1], amount, c);
+            addStats(args[1], amount, c);
 
         if(args[0].equals("set"))
-            SetStats(args[1], amount, c);
+            setStats(args[1], amount, c);
 
         if(args[0].equals("remove"))
-            RemoveStats(args[1], c);
+            removeStats(args[1], c);
 
         return true;
     }
@@ -72,7 +72,7 @@ public class ModifyStats implements CommandExecutor {
      * @param added - The amount to add to the key
      * @param container - The container to modify
      */
-    void AddStats(String key, int added, PersistentDataContainer container){
+    void addStats(String key, int added, PersistentDataContainer container){
         // If the persistent data does not exist, set it to the added amount.
         if(!container.has(new NamespacedKey(ValantisSTATS.getPlugin(), key))){
             container.set(new NamespacedKey(ValantisSTATS.getPlugin(), key), PersistentDataType.INTEGER , added);
@@ -84,11 +84,11 @@ public class ModifyStats implements CommandExecutor {
         }
     }
 
-    void SetStats(String key, int added, PersistentDataContainer container){
+    void setStats(String key, int added, PersistentDataContainer container){
         container.set(new NamespacedKey(ValantisSTATS.getPlugin(), key), PersistentDataType.INTEGER, added);
     }
 
-    void RemoveStats(String key, PersistentDataContainer container){
+    void removeStats(String key, PersistentDataContainer container){
         container.remove(new NamespacedKey(ValantisSTATS.getPlugin(), key));
     }
 }
